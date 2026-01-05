@@ -3,7 +3,39 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Gray colors for Safari compatibility */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  
+  /* Blue colors */
+  --blue-900: #1e3a8a;
+  --blue-800: #1e40af;
+  
+  /* Orange colors */
+  --orange-500: #f97316;
+  --orange-600: #ea580c;
 }
+
+/* Safari color fix - explicit color values */
+.text-gray-50 { color: var(--gray-50) !important; }
+.text-gray-100 { color: var(--gray-100) !important; }
+.text-gray-200 { color: var(--gray-200) !important; }
+.text-gray-300 { color: var(--gray-300) !important; }
+.text-gray-400 { color: var(--gray-400) !important; }
+.text-gray-500 { color: var(--gray-500) !important; }
+.text-gray-600 { color: var(--gray-600) !important; }
+.text-gray-700 { color: var(--gray-700) !important; }
+.text-gray-800 { color: var(--gray-800) !important; }
+.text-gray-900 { color: var(--gray-900) !important; }
 
 body {
   color: var(--foreground);

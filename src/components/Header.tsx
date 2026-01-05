@@ -67,7 +67,7 @@ export default function Header() {
                 <Link href="/waermepumpen-check" className="block text-gray-600 hover:text-blue-900" onClick={() => setIsMenuOpen(false)}>🌱 Wärmepumpen-Check</Link>
                 <Link href="/foerdermittel" className="block text-gray-600 hover:text-blue-900" onClick={() => setIsMenuOpen(false)}>💰 Fördermittel</Link>
               </div>
-              <div className="text-gray-700 font-medium py-2">Service</div>
+              <div className="font-medium py-2 text-gray-800">Service</div>
               <div className="pl-4 space-y-3 py-2 border-b border-gray-100">
                 <Link href="/notdienst" className="block text-gray-600 hover:text-blue-900" onClick={() => setIsMenuOpen(false)}>🚨 24/7 Notdienst</Link>
                 <Link href="/service-versprechen" className="block text-gray-600 hover:text-blue-900" onClick={() => setIsMenuOpen(false)}>⭐ Service-Versprechen</Link>
