@@ -80,7 +80,7 @@ export default function Notdienst() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       <Header />
       
       {/* Emergency Hero Section */}

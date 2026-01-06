@@ -126,7 +126,7 @@ export default function Referenzen() {
     : projects.filter(project => project.category === selectedCategory);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Header />
       
       {/* Hero Section */}

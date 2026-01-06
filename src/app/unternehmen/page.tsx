@@ -88,7 +88,7 @@ export default function Unternehmen() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Header />
       
       {/* Hero Section with Background */}

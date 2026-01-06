@@ -88,7 +88,7 @@ export default function Leistungen() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Header />
       
       {/* Hero Section */}
@@ -158,7 +158,7 @@ export default function Leistungen() {
 
       {/* Main Services Section */}
       {/* 3D Carousel Section */}
-      <section id="services" className="py-20 bg-gray-50">
+      <section id="services" className="py-20 bg-gray-50 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Unsere Leistungen</h2>
@@ -382,13 +382,25 @@ export default function Leistungen() {
           }
 
           @media (max-width: 768px) {
+            .carousel-container {
+              padding: 1rem;
+            }
+            
             .carousel-slide {
-              flex: 0 0 300px;
+              flex: 0 0 280px;
             }
             
             .carousel-nav {
-              width: 48px;
-              height: 48px;
+              width: 40px;
+              height: 40px;
+            }
+            
+            .prev-btn {
+              left: 0.5rem;
+            }
+            
+            .next-btn {
+              right: 0.5rem;
             }
           }
         `}} />
