@@ -1,96 +1,146 @@
 @import "tailwindcss";
 
+/* ═══════════════════════════════════════════
+   JORDAN GmbH — Design System
+   Modern, Premium Handwerker Design
+   ═══════════════════════════════════════════ */
+
 :root {
+  /* Brand Colors — Jordan GmbH Corporate Identity */
+  --brand-navy: #152852;
+  --brand-navy-light: #193c6e;
+  --brand-blue: #0d3f96;
+  --brand-blue-light: #193c9d;
+  --brand-accent: #F39900;
+  --brand-accent-hover: #d98600;
+  --brand-orange: #f68e1e;
+  --brand-gold: #FFB617;
+  --brand-gold-light: #ffc64a;
+  --brand-red: #e30613;
+  
+  /* Neutrals */
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --slate-950: #020617;
+  
+  /* Semantic */
   --background: #ffffff;
-  --foreground: #171717;
-  
-  /* Gray colors for Safari compatibility */
-  --gray-50: #f9fafb;
-  --gray-100: #f3f4f6;
-  --gray-200: #e5e7eb;
-  --gray-300: #d1d5db;
-  --gray-400: #9ca3af;
-  --gray-500: #6b7280;
-  --gray-600: #4b5563;
-  --gray-700: #374151;
-  --gray-800: #1f2937;
-  --gray-900: #111827;
-  
-  /* Blue colors */
-  --blue-900: #1e3a8a;
-  --blue-800: #1e40af;
-  
-  /* Orange colors */
-  --orange-500: #f97316;
-  --orange-600: #ea580c;
+  --foreground: var(--slate-900);
+  --muted: var(--slate-100);
+  --muted-foreground: var(--slate-500);
+  --border: var(--slate-200);
+  --ring: var(--brand-accent);
 }
 
-/* Safari color fix - explicit color values */
-.text-gray-50 { color: var(--gray-50) !important; }
-.text-gray-100 { color: var(--gray-100) !important; }
-.text-gray-200 { color: var(--gray-200) !important; }
-.text-gray-300 { color: var(--gray-300) !important; }
-.text-gray-400 { color: var(--gray-400) !important; }
-.text-gray-500 { color: var(--gray-500) !important; }
-.text-gray-600 { color: var(--gray-600) !important; }
-.text-gray-700 { color: var(--gray-700) !important; }
-.text-gray-800 { color: var(--gray-800) !important; }
-.text-gray-900 { color: var(--gray-900) !important; }
+/* ─── Base Resets ─────────────────────────── */
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  overflow-x: hidden;
-}
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
 
-/* iOS Safari fixes */
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  overflow-x: hidden;
-}
-
-/* Prevent horizontal scroll on all elements */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-img, video, iframe {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    overflow-x: hidden;
   }
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+
+  body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: var(--font-source-sans), "Source Sans Pro", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+/* ─── Typography ──────────────────────────── */
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-exo2), "Exo 2", Arial, sans-serif;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: var(--slate-900);
+  }
 }
 
-/* Performance optimization for reduced motion */
+/* ─── Container ───────────────────────────── */
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 640px) { .container { max-width: 640px; } }
+@media (min-width: 768px) { .container { max-width: 768px; padding-left: 2rem; padding-right: 2rem; } }
+@media (min-width: 1024px) { .container { max-width: 1024px; } }
+@media (min-width: 1280px) { .container { max-width: 1200px; } }
+
+/* ─── Animations ──────────────────────────── */
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgb(243 153 0 / 0.2); }
+  50% { box-shadow: 0 0 40px rgb(243 153 0 / 0.4); }
+}
+
+.animate-fade-up { animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-fade-in { animation: fade-in 0.5s ease-out both; }
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 2.5s ease-in-out infinite; }
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
@@ -99,244 +149,56 @@ html {
   }
 }
 
-/* Container utility */
-.container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
+/* ─── Utilities ───────────────────────────── */
 
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-  }
-}
-
-/* Custom animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(-25%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    transform: translateY(0);
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
-}
-
-/* Utility classes */
-.fade-in {
-  animation: fadeIn 0.6s ease-out;
-}
-
-.slide-in-up {
-  animation: slideInUp 0.8s ease-out;
-}
-
-.slide-in-down {
-  animation: slideInDown 0.6s ease-out;
-}
-
-/* Focus styles for accessibility */
-*:focus {
-  outline: 2px solid var(--primary-blue);
-  outline-offset: 2px;
-}
-
-/* Custom button styles */
-.btn-primary {
-  background: linear-gradient(135deg, var(--primary-orange), #f97316);
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  background: linear-gradient(135deg, #dc2626, var(--primary-orange));
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--primary-blue);
-  border: 2px solid var(--primary-blue);
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-}
-
-.btn-secondary:hover {
-  background: var(--primary-blue);
-  color: white;
-  transform: translateY(-1px);
-}
-
-/* Custom shadows */
-.shadow-jordan {
-  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-.shadow-jordan-lg {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-/* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary-blue), var(--primary-orange));
+  background: linear-gradient(135deg, var(--brand-accent), var(--brand-orange));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Hero gradient background */
-.hero-gradient {
-  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 25%, #3b82f6 50%, #60a5fa 75%, #93c5fd 100%);
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+.glass-dark {
+  background: rgba(21, 40, 82, 0.85);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
+.pattern-grid {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--primary-blue);
+/* ─── Focus & Accessibility ───────────────── */
+
+*:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 2px;
   border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-orange);
+*:focus:not(:focus-visible) {
+  outline: none;
 }
 
-/* Link styles */
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Typography improvements */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
-@media (min-width: 768px) {
-  h1 {
-    font-size: 3.5rem;
-  }
-  
-  h2 {
-    font-size: 2.5rem;
-  }
-  
-  h3 {
-    font-size: 2rem;
-  }
-}
-
-/* Selection color */
 ::selection {
-  background: var(--primary-orange);
-  color: white;
+  background: var(--brand-accent);
+  color: var(--brand-navy);
 }
 
-/* Loading states */
-.loading {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
+/* ─── Scrollbar ───────────────────────────── */
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground: #ededed;
-    --background: #0a0a0a;
-  }
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--slate-300); border-radius: 100px; }
+::-webkit-scrollbar-thumb:hover { background: var(--slate-400); }

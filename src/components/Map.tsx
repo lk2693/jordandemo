@@ -143,7 +143,7 @@ export default function Map({
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   </svg>
-                  <span>Rischbleek 6, 38126 Braunschweig</span>
+                  <span>Rischbleek 3, 38126 Braunschweig</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -153,7 +153,7 @@ export default function Map({
                 </div>
               </div>
               <a 
-                href="https://www.google.com/maps/dir//Rischbleek+6,+38126+Braunschweig"
+                href="https://www.google.com/maps/dir//Rischbleek+3,+38126+Braunschweig"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 block w-full bg-orange-500 hover:bg-orange-600 text-white text-center py-2 px-4 rounded-xl text-sm font-semibold transition-colors"

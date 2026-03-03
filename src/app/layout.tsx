@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Exo_2, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 
-// Optimized font loading
-const inter = Inter({
+// Corporate Identity fonts matching jordan24.de
+const exo2 = Exo_2({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-exo2",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+});
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-source-sans",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -76,13 +84,13 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
-        <meta name="theme-color" content="#1e3a8a" />
+        <meta name="theme-color" content="#152852" />
         <link rel="icon" href="/joradan.png" type="image/png" />
         <link rel="apple-touch-icon" href="/joradan.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body
-        className={`${inter.variable} font-sans antialiased`}
+        className={`${exo2.variable} ${sourceSans.variable} font-sans antialiased`}
       >
         {children}
       </body>
